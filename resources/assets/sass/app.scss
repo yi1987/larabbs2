@@ -56,11 +56,35 @@ body {
 }
 
 /* User register page */
-.register-page {
-    img.captcha {
-        margin-bottom: 0px;
-        margin-top: 10px;
-        cursor: pointer;
+.users-show-page {
+    .user-info {
+        .thumbnail {
+            margin-bottom: 0px;
+        }
+    }
+
+    .nav-tabs {
+        margin-bottom: 20px;
+
+        >li.active > a {
+            background-color: #fff;
+        }
+    }
+
+    .list-group {
+        .list-group-item {
+            border: none;
+            margin-bottom: 0px;
+            border-bottom: 1px solid #efefef;
+
+            .meta {
+                color: #b3b3b3;
+            }
+        }
+    }
+
+    .pagination {
+        margin: 12px 0;
     }
 }
 
