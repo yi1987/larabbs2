@@ -25,6 +25,10 @@ class TopicsController extends Controller
 
     public function show(Topic $topic)
     {
+         if ( ! empty($topic->slug) && $topic->slug != $request->slug) {
+            return redirect($topic->link(), 301);
+        }
+
         return view('topics.show', compact('topic'));
     }
 
@@ -40,7 +44,7 @@ class TopicsController extends Controller
         $topic->user_id = Auth::id();
         $topic->save();
 
-        return redirect()->route('topics.show', $topic->id)->with('message', 'Created successfully.');
+        return redirect()->to($topic->link())->with('message', 'Created successfully.');
     }
 
 	public function edit(Topic $topic)
